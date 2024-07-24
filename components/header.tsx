@@ -7,8 +7,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 export default function Header() {
+  const router = useRouter();
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -20,7 +22,7 @@ export default function Header() {
         <View style={styles.rightSide}>
           <TouchableOpacity
             activeOpacity={0.5}
-            // onPress={() => router.push("/search")}
+            onPress={() => router.push("/search")}
           >
             <MaterialIcons
               name="search"

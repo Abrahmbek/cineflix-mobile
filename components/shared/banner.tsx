@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: Dimensions.get("window").height,
+    height: Dimensions.get("window").height / 2,
   },
   infoContainer: {
     paddingTop: 25,
