@@ -55,7 +55,41 @@ export const searchMovies = async (params: { query: string }) => {
     console.log(error);
   }
 };
+export const movieDetails = async (id: number, type: string) => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}/${type}/${id}?api_key=${API_KEY}`
+    );
 
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const movieCredits = async (id: number, type: string) => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}/${type}/${id}/credits?api_key=${API_KEY}`
+    );
+
+    return data && data.cast;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const similarMovies = async (id: number, type: string) => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}/${type}/${id}/similar?api_key=${API_KEY}`
+    );
+
+    return data && data.results;
+  } catch (error) {
+    console.log(error);
+  }
+};
 // IMAGE
 export const imageOriginal = (path?: string) => {
   return `${IMAGE_BASE_URL}/original${path}`;

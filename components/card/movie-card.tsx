@@ -23,9 +23,9 @@ export default function MovieCard({ item }: Props) {
 
   return (
     <TouchableWithoutFeedback
-    // onPress={() =>
-    //   router.push(`/movie/${item.id}?type=${pathname === "/tv" && "tv"}`)
-    // }
+      onPress={() =>
+        router.push(`/movie/${item.id}?type=${pathname === "/tv" && "tv"}`)
+      }
     >
       <Image
         source={{
